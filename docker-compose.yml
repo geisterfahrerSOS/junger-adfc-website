@@ -1,0 +1,15 @@
+services:
+  svelte-app:
+    build: .
+    container_name: svelte-app
+    restart: unless-stopped
+    networks:
+      - any-sync-network
+    environment:
+      - PORT=3000
+      - ORIGIN=https://junger-adfc-rhein-neckar.de
+
+networks:
+  any-sync-network:
+    external: true
+    name: any-sync-dockercompose_default
